@@ -1,0 +1,14 @@
+[
+  {
+    "code": "T123",
+    "size": "M",
+    "quantity": 10,
+    "price": 25
+  },
+  {
+    "code": "T123",
+    "size": "L",
+    "quantity": 5,
+    "price": 28
+  }
+]
