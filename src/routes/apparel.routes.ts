@@ -1,5 +1,6 @@
 import express from "express";
 import * as apparelController from "../controllers/apparel.controller";
+import "./swagger.doc"
 
 const router = express.Router();
 
