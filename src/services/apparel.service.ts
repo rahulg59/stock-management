@@ -18,9 +18,11 @@ export function updateStock(update: ApparelStock): "Add" | "Update" {
     const index = stocks.findIndex(s => s.code === update.code && s.size === update.size);
     if (index > -1) {
         stocks[index] = update;
+        writeStocks(stocks);
         return "Update";
     } else {
         stocks.push(update);
+        writeStocks(stocks);
         return "Add";
     }
 }

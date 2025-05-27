@@ -10,5 +10,11 @@
     "size": "L",
     "quantity": 5,
     "price": 28
+  },
+  {
+    "code": "T126",
+    "size": "M",
+    "quantity": 20,
+    "price": 25
   }
 ]
