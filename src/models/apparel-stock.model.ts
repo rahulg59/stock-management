@@ -4,3 +4,8 @@ export type ApparelStock = {
   quantity: number;
   price: number;
 }
+
+export type Vendor = {
+  vendorId: string;
+  stock: ApparelStock[];
+}

@@ -1,0 +1,123 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Apparel Stock API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/vendors/{vendorId}/update": {
+      "post": {
+        "summary": "Update stock for a single apparel item",
+        "parameters": [
+          {
+            "name": "vendorId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApparelStock"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Stock updated" }
+        }
+      }
+    },
+    "/api/vendors/{vendorId}/update-batch": {
+      "post": {
+        "summary": "Update stock for multiple items",
+        "parameters": [
+          {
+            "name": "vendorId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/ApparelStock" }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Batch stock updated" }
+        }
+      }
+    },
+    "/api/orders/can-fulfill": {
+      "post": {
+        "summary": "Check if order can be fulfilled",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/OrderItem" }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Fulfillment result" }
+        }
+      }
+    },
+    "/api/orders/lowest-cost": {
+      "post": {
+        "summary": "Get lowest cost to fulfill order",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/OrderItem" }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Cost breakdown" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApparelStock": {
+        "type": "object",
+        "properties": {
+          "code": { "type": "string" },
+          "size": { "type": "string" },
+          "quantity": { "type": "integer" },
+          "price": { "type": "number" }
+        },
+        "required": ["code", "size", "quantity", "price"]
+      },
+      "OrderItem": {
+        "type": "object",
+        "properties": {
+          "code": { "type": "string" },
+          "size": { "type": "string" },
+          "quantity": { "type": "integer" }
+        },
+        "required": ["code", "size", "quantity"]
+      }
+    }
+  }
+}

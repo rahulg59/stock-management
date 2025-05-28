@@ -1,20 +1,42 @@
 [
   {
-    "code": "T123",
-    "size": "M",
-    "quantity": 10,
-    "price": 25
+    "vendorId": "1",
+    "stock": [
+      {
+        "code": "T123",
+        "size": "M",
+        "quantity": 10,
+        "price": 25
+      },
+      {
+        "code": "T125",
+        "size": "M",
+        "quantity": 2,
+        "price": 10
+      },
+      {
+        "code": "T125",
+        "size": "L",
+        "quantity": 5,
+        "price": 14
+      }
+    ]
   },
   {
-    "code": "T123",
-    "size": "L",
-    "quantity": 5,
-    "price": 28
-  },
-  {
-    "code": "T126",
-    "size": "M",
-    "quantity": 20,
-    "price": 25
+    "vendorId": "2",
+    "stock": [
+      {
+        "code": "T125",
+        "size": "L",
+        "quantity": 5,
+        "price": 8
+      },
+      {
+        "code": "T123",
+        "size": "M",
+        "quantity": 5,
+        "price": 18
+      }
+    ]
   }
 ]
